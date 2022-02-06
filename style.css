@@ -1,3 +1,5 @@
+/* --------------------------------- global --------------------------------- */
+
 :root {
   --clr-primary-100: hsl(207, 43%, 68%);
   --clr-primary-200: hsl(208, 43%, 60%);
@@ -27,7 +29,7 @@
   --clr-tertiary-800: hsl(60, 100%, 52%);
   --clr-tertiary-900: hsl(60, 100%, 44%);
 
-  --clr-neutral-001: hsl(0, 0%, 100%);
+  --clr-neutral-000: hsl(0, 0%, 100%);
   --clr-neutral-050: hsl(0, 0%, 95%);
   --clr-neutral-100: hsl(0, 0%, 90%);
   --clr-neutral-200: hsl(0, 0%, 80%);
@@ -57,6 +59,19 @@ html:focus-within {
   scroll-behavior: smooth;
 }
 
+
+/* ----------------------------- utility classes ---------------------------- */
+
+.align-center {
+  text-align: center;
+}
+
+.self-align-center {
+  margin-inline: auto;
+}
+
+/* ------------------------------ tags defaults ----------------------------- */
+
 /* set core body defaults */
 body {
   display: grid;
@@ -66,53 +81,177 @@ body {
 }
 
 main {
-  width: min(95%, 100em);
+  width: min(100%, 100em);
   margin: auto;
-  border-radius: 15px;
+  background-color: var(--clr-neutral-000);
+}
+
+section {
   padding: 1em;
-  background-color: white;
 }
 
 img {
   display: block;
 }
 
-.align-center {
-  text-align: center;
+a {
+  text-decoration: none;
 }
+
+ul {
+  margin-left: 1em;
+}
+
 
 h1 {
-  position: relative;
-  display: inline-block;
   margin-bottom: 1em;
+  font-size: 2.25rem;
   font-family: var(--ff-primary);
   font-weight: 300;
-  color: var(--clr-primary-600);
-}
-
-h1::before,
-h1::after {
-  position: absolute;
-  top: 50%;  
-  transform: translateY(-50%);
-  content: '';
-  width: 5em;
-  height: 2px;
-  background-color: var(--clr-primary-500);
-}
-
-h1::before {
-  left: -5.5em;
-}
-
-h1::after {
-  right: -5.5em;
+  text-transform: capitalize;
 }
 
 p {
-  max-width: 80ch;
+  max-width: 75ch;
   margin-bottom: 1em;
   font-family: var(--ff-secondary);
-  font-size: 1.15rem;
+  font-size: 1.25rem;
   font-weight: 200;
+}
+
+/* -------------------------------------------------------------------------- */
+
+.section--neutral {
+  background-color: var(--clr-neutral-000);
+}
+
+.section--primary {
+  background-color: var(--clr-primary-700);
+}
+
+/* -------------------------------------------------------------------------- */
+
+.section--neutral p {
+  color: var(--clr-primary-900);
+}
+
+.section--primary p {
+  color: var(--clr-neutral-100);
+}
+
+/* -------------------------------------------------------------------------- */
+
+.section--neutral h1 {
+  color: var(--clr-primary-600);
+}
+
+.section--primary h1 {
+  color: var(--clr-neutral-100);
+}
+
+.section--neutral h1::before,
+.section--neutral h1::after {
+  background-color: var(--clr-primary-100);
+}
+
+.section--primary h1::before,
+.section--primary h1::after {
+  background-color: var(--clr-neutral-000);
+}
+
+/* -------------------------------------------------------------------------- */
+
+.section--neutral ul li::marker {
+  color: var(--clr-primary-600);
+}
+
+.section--primary ul li::marker {
+  color: var(--clr-neutral-100);
+}
+
+
+/* -------------------------------------------------------------------------- */
+
+.h1-main-wrapper {
+  text-align: center;
+}
+
+.h1-main-wrapper h1 {
+  position: relative;
+  display: inline-block;
+}
+
+.h1-main-wrapper h1::before,
+.h1-main-wrapper h1::after {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  content: '';
+  height: 1.5px;
+}
+
+.h1-main-wrapper h1::before {
+  width: 80%;
+  bottom: -.25em;
+}
+
+.h1-main-wrapper h1::after {
+  width: 50%;
+  bottom: -.5em;
+}
+
+/* -------------------------------------------------------------------------- */
+
+.h1-alternative-wrapper--left {
+  text-align: left;
+}
+
+.h1-alternative-wrapper--right {
+  text-align: right;
+}
+
+.h1-alternative-wrapper h1 {
+  position: relative;
+  display: inline-block;
+}
+
+.h1-alternative-wrapper h1::before {
+  position: absolute;
+  bottom: -.25em; 
+  content: '';
+  width: 50%;
+  height: 1.5px;
+}
+
+.h1-alternative-wrapper--left h1::before {
+  left: 0; 
+}
+
+.h1-alternative-wrapper--right h1::before {
+  right: 0; 
+}
+
+/* -------------------------------------------------------------------------- */
+
+.btn-go-to-top {
+  position: fixed;
+  bottom: 1em;
+  right: 1em;
+  display: grid;
+  place-items: center;
+  width: 3.5em;
+  height: 3.5em;
+  border-radius: 50%;
+  color: var(--clr-primary-600);
+  background-color: var(--clr-secondary-500);
+  transition: all 500ms;
+}
+
+.btn-go-to-top:hover {
+  color: var(--clr-tertiary-300);
+  background-color: var(--clr-secondary-600);
+}
+
+.btn-go-to-top i {
+  font-size: 2.5rem;
 }
