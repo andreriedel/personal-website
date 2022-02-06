@@ -1,0 +1,118 @@
+:root {
+  --clr-primary-100: hsl(207, 43%, 68%);
+  --clr-primary-200: hsl(208, 43%, 60%);
+  --clr-primary-300: hsl(208, 43%, 52%);
+  --clr-primary-400: hsl(208, 43%, 44%);
+  --clr-primary-500: hsl(208, 43%, 35%); /* Bdazzled Blue */
+  --clr-primary-600: hsl(209, 43%, 28%);
+  --clr-primary-700: hsl(209, 43%, 20%);
+  --clr-primary-800: hsl(209, 44%, 12%);
+  --clr-primary-900: hsl(213, 43%, 4%);
+
+  --clr-secondary-100: hsl(163, 92%, 72%);
+  --clr-secondary-200: hsl(163, 91%, 64%);
+  --clr-secondary-300: hsl(163, 91%, 56%);
+  --clr-secondary-400: hsl(163, 91%, 48%);
+  --clr-secondary-500: hsl(163, 91%, 39%); /* Mountain Meadow */
+  --clr-secondary-600: hsl(163, 91%, 32%);
+  --clr-secondary-700: hsl(163, 90%, 24%);
+  --clr-secondary-800: hsl(163, 90%, 16%);
+  --clr-secondary-900: hsl(162, 90%, 8%);
+
+  --clr-tertiary-300: hsl(60, 100%, 92%);
+  --clr-tertiary-400: hsl(60, 100%, 84%);
+  --clr-tertiary-500: hsl(60, 100%, 75%); /* Canary */
+  --clr-tertiary-600: hsl(60, 100%, 68%);
+  --clr-tertiary-700: hsl(60, 100%, 60%);
+  --clr-tertiary-800: hsl(60, 100%, 52%);
+  --clr-tertiary-900: hsl(60, 100%, 44%);
+
+  --clr-neutral-001: hsl(0, 0%, 100%);
+  --clr-neutral-050: hsl(0, 0%, 95%);
+  --clr-neutral-100: hsl(0, 0%, 90%);
+  --clr-neutral-200: hsl(0, 0%, 80%);
+  --clr-neutral-300: hsl(0, 0%, 70%);
+  --clr-neutral-400: hsl(0, 0%, 60%);
+  --clr-neutral-500: hsl(0, 0%, 50%);
+  --clr-neutral-600: hsl(0, 0%, 40%);
+  --clr-neutral-700: hsl(0, 0%, 30%);
+  --clr-neutral-800: hsl(0, 0%, 20%);
+  --clr-neutral-900: hsl(0, 0%, 10%);
+  --clr-neutral-999: hsl(0, 0%, 0%);
+
+  --ff-primary: 'Raleway', Arial, Helvetica, sans-serif;
+  --ff-secondary: 'Quicksand', Arial, Helvetica, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* set core body defaults */
+body {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  background-color: var(--clr-neutral-050);
+}
+
+main {
+  width: min(95%, 100em);
+  margin: auto;
+  border-radius: 15px;
+  padding: 1em;
+  background-color: white;
+}
+
+img {
+  display: block;
+}
+
+.align-center {
+  text-align: center;
+}
+
+h1 {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 1em;
+  font-family: var(--ff-primary);
+  font-weight: 300;
+  color: var(--clr-primary-600);
+}
+
+h1::before,
+h1::after {
+  position: absolute;
+  top: 50%;  
+  transform: translateY(-50%);
+  content: '';
+  width: 5em;
+  height: 2px;
+  background-color: var(--clr-primary-500);
+}
+
+h1::before {
+  left: -5.5em;
+}
+
+h1::after {
+  right: -5.5em;
+}
+
+p {
+  max-width: 80ch;
+  margin-bottom: 1em;
+  font-family: var(--ff-secondary);
+  font-size: 1.15rem;
+  font-weight: 200;
+}
